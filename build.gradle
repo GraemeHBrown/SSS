@@ -20,6 +20,6 @@ dependencies {
 jar {
 
     manifest {
-        attributes 'Main-Class': 'App'
+        attributes 'Main-Class': 'com.graemehbrown.simplestockmarket.App'
     }
 }
