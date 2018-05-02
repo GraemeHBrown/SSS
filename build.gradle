@@ -12,10 +12,13 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile 'org.assertj:assertj-core:3.9.0'
+    compileClasspath 'org.assertj:assertj-core:3.9.0'
+    compile 'org.assertj:assertj-core:3.9.0'
+
 }
 
 jar {
-    
+
     manifest {
         attributes 'Main-Class': 'TradeReporter'
     }
