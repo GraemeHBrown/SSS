@@ -1,6 +1,4 @@
-import com.graemehbrown.simplestockmarket.Action.DividendAction;
-import com.graemehbrown.simplestockmarket.Action.MarketAction;
-import com.graemehbrown.simplestockmarket.Action.PERatioAction;
+import com.graemehbrown.simplestockmarket.Action.*;
 import com.graemehbrown.simplestockmarket.App;
 import com.graemehbrown.simplestockmarket.MarketActionSupplier;
 import com.graemehbrown.simplestockmarket.MarketActionType;
@@ -41,4 +39,26 @@ public class MarketActionSupplierTest {
         MarketAction foundAction = supplier.supplyAction(validType);
         assertEquals(PERatioAction.class, foundAction.getClass());
     }
+
+    @Test
+    public void supplyActionMethodReturnsRecordTradeActionWhenCorrectTypePassedIn(){
+        MarketActionType validType = MarketActionType.RECORD_TRADE;
+        MarketAction foundAction = supplier.supplyAction(validType);
+        assertEquals(RecordTradeAction.class, foundAction.getClass());
+    }
+
+    @Test
+    public void supplyActionMethodReturnsWeightedStockPriceActionWhenCorrectTypePassedIn(){
+        MarketActionType validType = MarketActionType.WEIGHTED_STOCK_PRICE;
+        MarketAction foundAction = supplier.supplyAction(validType);
+        assertEquals(WeightedStockPriceAction.class, foundAction.getClass());
+    }
+
+    @Test
+    public void supplyActionMethodReturnsGBCEActionWhenCorrectTypePassedIn(){
+        MarketActionType validType = MarketActionType.GBCE;
+        MarketAction foundAction = supplier.supplyAction(validType);
+        assertEquals(GBCEAction.class, foundAction.getClass());
+    }
+
 }

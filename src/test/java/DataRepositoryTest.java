@@ -33,10 +33,10 @@ public class DataRepositoryTest {
     }
 
     @Test
-    public void addStockAddStockToStockList() {
-        assertEquals(1, dataRepository.getStockList().size());
+    public void addStockAddsStockToStockList() {
+        int stockListBefore = dataRepository.getStockList().size();
         dataRepository.addStock(testStock2);
-        assertEquals(2, dataRepository.getStockList().size());
+        assertEquals(stockListBefore+1, dataRepository.getStockList().size());
     }
 
     @Test
@@ -48,7 +48,6 @@ public class DataRepositoryTest {
 
     @Test
     public void getTradeListReturnsListOfTrades() {
-        assertEquals(0, dataRepository.getTradeList().size());
         dataRepository.addTrade(testTrade);
         assertTrue(dataRepository.getTradeList().contains(testTrade));
     }

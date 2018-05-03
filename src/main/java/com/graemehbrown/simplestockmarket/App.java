@@ -13,7 +13,6 @@ import java.io.InputStreamReader;
 public class App {
     private static DataRepository dataRepository = DataRepository.getInstance();
 
-    //todo build artifact
     public static void main(String[] args) {
         populateStockData();
 
